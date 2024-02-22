@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex-grow: 1;
+}
+
+nav {
+    background-color: red;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    padding: 20px;
+}
+
+nav ul {
+    background-color: green;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    width: 100%;
+}
