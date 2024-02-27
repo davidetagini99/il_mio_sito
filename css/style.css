@@ -447,7 +447,7 @@ nav span {
         transition: 0.3s;
     }
 
-    .sidenav .globalindsidenav {
+    .sidenav .globalinsidenav {
         background-color: transparent;
         height: 100vh;
         display: flex;
@@ -459,7 +459,7 @@ nav span {
     .sidenav .injectsidenav {
         background-color: transparent;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         width: 100%;
