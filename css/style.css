@@ -408,9 +408,8 @@ nav span {
     font-weight: bold;
   }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 1280px) { /* I've taken the max measure available to cover all device types including tablets */
 
-    /* smallest mobile screens, I don't think still exists nowadays ... */
     nav {
         padding: 12px;
     }
