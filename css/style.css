@@ -364,6 +364,69 @@ nav span {
     object-fit: cover;
   }
 
+  #voteFormModal .modal-content {
+    background-color: var(--text-color-on-background);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 20px;
+  }
+
+  .modal-content .modal-heading {
+    background-color: transparent;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #voteFormModal .modal-content form {
+    background-color: transparent;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: start;
+    gap: 20px;
+  }
+
+  #voteFormModal .modal-content form input[type=number] {
+    background-color: var(--text-color-on-background);
+    padding: 10px;
+    width: 12vw;
+    border: 1px solid var(--text-color-on-white);
+  }
+
+  #voteFormModal .modal-content form label {
+    background-color: transparent;
+    padding-top: 10px;
+  }
+
+  #voteFormModal .modal-content form .sendvotebtncontainer {
+    background-color: transparent;
+    height: 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #voteFormModal .modal-content form .sendvotebtncontainer button {
+    background-color: var(--primary-color);
+    padding: 8px;
+    width: 7vw;
+    color: var(--text-color-on-background);
+    text-transform: uppercase;
+    text-align: center;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    border: none;
+  }
+
+  #voteFormModal .modal-content form .sendvotebtncontainer button:hover {
+    cursor: pointer;
+  }
+
   .closebtncontainer {
     background-color: transparent;
     display: flex;

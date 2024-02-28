@@ -104,13 +104,19 @@ if (isset($_POST["sendvotebtn"])) {
         <!-- Vote Form Modal -->
         <div id="voteFormModal" class="modal">
             <div class="modal-content">
-                <span class="close" onclick="closeVoteForm()">&times;</span>
-                <h2>Valuta il progetto</h2>
+                <div class="modal-heading">
+                    <h2>Valuta il progetto</h2>
+                    <span class="close" onclick="closeVoteForm()">&times;</span>
+
+                </div>
                 <form action="portfolio.php" method="post">
                     <input type="hidden" id="projectIdInput" name="project_id" value="">
                     <label for="vote_value">Voto (da 1 a 5): </label>
                     <input type="number" id="voteInput" name="vote_value" min="1" max="5" required>
-                    <button type="submit" name="sendvotebtn">Invia voto</button>
+                    <div class="sendvotebtncontainer">
+                        <button type="submit" name="sendvotebtn">Invia voto</button>
+                    </div>
+
                 </form>
             </div>
         </div>
