@@ -1,4 +1,23 @@
 document.addEventListener('DOMContentLoaded', function () {
+    var openModalBtns = document.querySelectorAll('.open-modal-btn');
+    var modalImage = document.getElementById('modalImage');
+    var modalDescription = document.getElementById('modalDescription');
+
+    openModalBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            modalImage.src = btn.parentElement.previousElementSibling.src;
+            modalDescription.textContent = btn.getAttribute('data-project-description');
+            document.getElementById('myModal').style.display = 'block';
+        });
+    });
+
+    var closeModalBtn = document.querySelector('.close');
+    closeModalBtn.addEventListener('click', function () {
+        document.getElementById('myModal').style.display = 'none';
+    });
+})
+
+/*document.addEventListener('DOMContentLoaded', function () {
     // Get the modal
     var modal = document.getElementById("myModal");
 
@@ -26,4 +45,4 @@ document.addEventListener('DOMContentLoaded', function () {
             modal.style.display = "none";
         }
     }
-});
+});*/

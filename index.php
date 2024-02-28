@@ -57,7 +57,7 @@ require("conndb.php");
 
             foreach ($menuItems as $menuItem) {
                 $navigationHTML .= '<div class="icon-list-box">
-                                <a href="' . $menuItem['url'] . '"><span>' . $menuItem['label'] . '</span></a>
+                                <a href="' . $menuItem['url'] . '">' . $menuItem['label'] . '</a>
                             </div>';
             }
 
@@ -117,11 +117,11 @@ require("conndb.php");
         <!-- start about -->
         <div class="about-section" id="aboutMe">
             <h1>
-                <?php echo $textForWebsite['about_title_1']; ?>
+                <?php echo $textForWebsite['about_text_1']; ?>
             </h1>
             <div class="inside-aboutme">
                 <p class="firstattendent">
-                    <?php echo $textForWebsite['about_text_1']; ?>
+                    <?php echo $textForWebsite['about_title_1']; ?>
                 </p>
                 <p>
                     <?php echo $textForWebsite['about_text_2']; ?>
