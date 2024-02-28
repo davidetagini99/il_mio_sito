@@ -8,14 +8,21 @@ $result = $conn->query($query);
 if (isset($_POST["sendvotebtn"])) {
     $project_id = $_POST["project_id"];
     $vote_value = $_POST["vote_value"];
-    $user_ip = $_SERVER["REMOTE_ADDR"]; // Get user's IP address
+    $user_ip = $_SERVER["REMOTE_ADDR"];
 
     // Validate vote value
     if ($vote_value >= 1 && $vote_value <= 5) {
         // Check if project_id is not empty and is numeric
         if (!empty($project_id) && is_numeric($project_id)) {
-            $query = "INSERT INTO project_votes (project_id, user_ip, vote_value) VALUES ($project_id, '$user_ip', $vote_value)";
-            if ($conn->query($query) === TRUE) {
+            // Use prepared statement to prevent SQL injection
+            $stmt = $conn->prepare("INSERT INTO project_votes (project_id, user_ip, vote_value) VALUES (?, ?, ?)");
+            $stmt->bind_param("iss", $project_id, $user_ip, $vote_value);
+
+            // Execute the prepared statement
+            $stmt->execute();
+
+            // Check for success
+            if ($stmt->affected_rows > 0) {
                 // Vote inserted successfully
                 header("Location: submit_vote.php");
                 exit();
@@ -23,6 +30,9 @@ if (isset($_POST["sendvotebtn"])) {
                 // Display MySQL error message
                 echo "Error: " . $conn->error;
             }
+
+            // Close the prepared statement
+            $stmt->close();
         } else {
             // Invalid project ID
             echo "Invalid project ID";
@@ -42,12 +52,30 @@ if (isset($_POST["sendvotebtn"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-    <script src="js/modal_control.js"></script>
     <title>Davide Tagini | portfolio</title>
 </head>
 
 <body>
     <main>
+        <style>
+            /* Add these styles for modal animation */
+            .modal-content {
+                animation: fadeInOut 0.5s ease-in-out;
+            }
+
+            @keyframes fadeInOut {
+                from {
+                    opacity: 0;
+                    transform: translateY(-50%);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        </style>
+
         <div class="projectstop">
             <h1>I miei progetti</h1>
         </div>
@@ -56,20 +84,20 @@ if (isset($_POST["sendvotebtn"])) {
             <?php
             while ($row = $result->fetch_assoc()) {
                 echo '<div class="card">';
-                echo '<h4>' . $row['project_title'] . '</h4>';
-                echo '<img src="' . $row['project_image'] . '" alt="Avatar" style="width:100%">';
+                echo '<h4>' . htmlspecialchars($row['project_title']) . '</h4>';
+                echo '<img src="' . htmlspecialchars($row['project_image']) . '" alt="Avatar" style="width:100%">';
                 echo '<div class="container">';
-                echo '<button class="open-modal-btn" data-project-description="' . $row['project_description'] . '">Apri scheda</button>';
+                echo '<button class="open-modal-btn" data-project-description="' . htmlspecialchars($row['project_description']) . '">Apri scheda</button>';
 
                 // Check if project_link is not null before echoing it
                 if ($row['project_link'] !== null) {
-                    echo '<p class="project-link"><a href="' . $row['project_link'] . '" target="_blank">Visita</a></p>';
+                    echo '<p class="project-link"><a href="' . htmlspecialchars($row['project_link']) . '" target="_blank">Visita</a></p>';
                 } else {
                     echo '<p class="project-link">No link available</p>';
                 }
 
                 // Add hidden input for project ID in the vote form
-                echo '<input type="hidden" class="project-id-input" value="' . $row['project_id'] . '">';
+                echo '<input type="hidden" class="project-id-input" value="' . htmlspecialchars($row['project_id']) . '">';
 
                 echo '</div>';
                 echo '</div>';
@@ -124,6 +152,25 @@ if (isset($_POST["sendvotebtn"])) {
     </main>
 
     <script>
+        // Declare functions globally
+        function openVoteForm() {
+            var voteFormModal = document.getElementById('voteFormModal');
+            voteFormModal.style.display = 'block';
+            // Remove existing animation, if any
+            voteFormModal.style.animation = 'none';
+            setTimeout(() => {
+                voteFormModal.style.animation = 'fadeInOut 0.5s ease-in-out';
+            }, 10); // Small delay to allow display property to take effect
+        }
+
+        function closeVoteForm() {
+            var voteFormModal = document.getElementById('voteFormModal');
+            voteFormModal.style.animation = 'fadeInOut 0.5s ease-in-out';
+            setTimeout(() => {
+                voteFormModal.style.display = 'none';
+            }, 500); // Wait for the animation to complete before hiding the modal
+        }
+
         document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('myModal').style.display = 'none';
             document.getElementById('voteFormModal').style.display = 'none';
@@ -152,15 +199,9 @@ if (isset($_POST["sendvotebtn"])) {
                 document.getElementById('myModal').style.display = 'none';
             });
         });
-
-        function openVoteForm() {
-            document.getElementById('voteFormModal').style.display = 'block';
-        }
-
-        function closeVoteForm() {
-            document.getElementById('voteFormModal').style.display = 'none';
-        }
     </script>
+
+
 
 </body>
 

@@ -1,67 +1,67 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 :root {
-    /* da cambiare */
-    --primary-color: #2c3e50;
-    --hover-color: #ff6f61;
-    --text-color-on-background: white;
-    --text-color-on-white: black;
+  /* da cambiare */
+  --primary-color: #2c3e50;
+  --hover-color: #ff6f61;
+  --text-color-on-background: white;
+  --text-color-on-white: black;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 main {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 nav {
-    background-color: transparent;
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-    padding: 6px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 2;
-    /* Set a higher z-index to make sure it's above the hero image */
-    padding-top: 12px;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  padding: 6px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+  /* Set a higher z-index to make sure it's above the hero image */
+  padding-top: 12px;
 }
 
 nav ul {
-    background-color: transparent;
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-    width: 100%;
+  background-color: transparent;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  width: 100%;
 }
 
 nav li {
-    background-color: transparent;
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
 }
 
 nav a {
-    text-decoration: none;
-    text-transform: uppercase;
-    color: var(--text-color-on-background);
-    font-size: 18px;
-    letter-spacing: 2px;
-    transition: all ease-in-out 0.5s;
-    padding: 12px;
-    
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--text-color-on-background);
+  font-size: 18px;
+  letter-spacing: 2px;
+  transition: all ease-in-out 0.5s;
+  padding: 12px;
+
 }
 
 nav a:hover {
@@ -75,49 +75,534 @@ nav a:focus {
 }
 
 nav .icon-list {
-    background-color: transparent;
-    display: flex;
-    flex-direction: row;
-    gap: 25px;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
 }
 
 .icon-list span {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+  font-size: 13px;
+}
+
+.icon-list i {
+  background-color: transparent;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: var(--text-color-on-background);
+}
+
+.icon-list .icon-list-box {
+  background-color: transparent;
+  padding: 12px;
+}
+
+nav span {
+  background-color: transparent;
+  display: none;
+  color: var(--text-color-on-background);
+}
+
+.sidenav {
+  background-color: transparent;
+  display: none;
+}
+
+/* The hero image */
+.hero-image {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://cdn.pixabay.com/photo/2024/01/08/21/31/frozen-8496388_1280.jpg");
+
+  /* Set a specific height */
+  height: 100vh;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  object-fit: cover;
+}
+
+.hero-container {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.stuff-container {
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding-top: 20px;
+}
+
+.stuff-container a {
+  background-color: transparent;
+  padding: 15px;
+  width: 25vw;
+  /* applicare un border radius fatto bene ...  */
+  color: var(--text-color-on-background);
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  /*border-radius: 12rem;*/
+  border: 4px solid var(--primary-color);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: all ease-in-out 0.5s;
+}
+
+.stuff-container a:hover {
+  background-color: var(--hover-color);
+  border: none;
+  color: var(--text-color-on-white);
+  font-weight: bold;
+}
+
+.stuff-container a:focus {
+  background-color: var(--hover-color);
+  border: none;
+  color: var(--text-color-on-white);
+  font-weight: bold;
+}
+
+.about-section {
+  background-color: transparent;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+
+.about-section p {
+  background-color: transparent;
+  padding-top: 20px;
+  padding-left: 20px;
+  text-align: justify;
+}
+
+.inside-aboutme {
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 15px;
+}
+
+.inside-aboutme .firstattendent {
+  border: 2px solid var(--primary-color);
+  padding: 20px;
+  font-size: 20px;
+}
+
+.inside-aboutme .secondattendent {
+  font-size: 20px;
+}
+
+.projectstop {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.projectstop p {
+  background-color: transparent;
+  padding-top: 20px;
+  font-size: 18px;
+}
+
+.projectsbox {
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  padding: 20px;
+  padding-left: 32px;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.projectsbox .card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 20vw;
+}
+
+.projectsbox .card img {
+  transition: 0.3s;
+  transform: scale(0.8);
+}
+
+.projectsbox .card .container {
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.projectsbox .card .container button {
+  background-color: var(--primary-color);
+  padding: 14px;
+  width: 14vw;
+  border: none;
+  color: var(--text-color-on-background);
+  text-transform: uppercase;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: all ease-in-out 0.3s;
+}
+
+.projectsbox .card h4 {
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  color: var(--text-color-on-background);
+}
+
+.projectsbox .card .container button:hover {
+  cursor: pointer;
+  background-color: var(--hover-color);
+  color: var(--text-color-on-white);
+  font-weight: bold;
+}
+
+.projectsbox .card .container button:focus {
+  cursor: pointer;
+  background-color: var(--hover-color);
+  color: var(--text-color-on-white);
+  font-weight: bold;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card img:hover {
+  transform: scale(1);
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 2px 16px;
+}
+
+.projectstop p {
+  background-color: transparent;
+  padding: 20px;
+  text-align: justify;
+}
+
+.projectsbox .card .project-link a {
+  color: transparent;
+  display: none;
+}
+
+/* The Modal (background) */
+.modal {
+  display: block;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: var(--text-color-on-background);
+  margin: 15% auto;
+  /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid var(--text-color-on-background);
+  width: 40%;
+  /* Could be more or less, depending on screen size */
+}
+
+.modal-content .modal-subcontent {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.modal-content .modal-subcontent p {
+  background-color: transparent;
+  text-align: justify;
+  font-size: 17px;
+}
+
+.modal-content .modal-subcontent img {
+  width: 20vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+}
+
+#voteFormModal .modal-content {
+  background-color: var(--text-color-on-background);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 20px;
+}
+
+.modal-content .modal-heading {
+  background-color: transparent;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#voteFormModal .modal-content form {
+  background-color: transparent;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  gap: 20px;
+}
+
+#voteFormModal .modal-content form input[type=number] {
+  background-color: var(--text-color-on-background);
+  padding: 10px;
+  width: 12vw;
+  border: 1px solid var(--text-color-on-white);
+}
+
+#voteFormModal .modal-content form label {
+  background-color: transparent;
+  padding-top: 10px;
+}
+
+#voteFormModal .modal-content form .sendvotebtncontainer {
+  background-color: transparent;
+  height: 5vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#voteFormModal .modal-content form .sendvotebtncontainer button {
+  background-color: var(--primary-color);
+  padding: 8px;
+  width: 7vw;
+  color: var(--text-color-on-background);
+  text-transform: uppercase;
+  text-align: center;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  border: none;
+  transition: all ease-in-out 0.3s;
+}
+
+#voteFormModal .modal-content form .sendvotebtncontainer button:hover {
+  cursor: pointer;
+  background-color: var(--hover-color);
+  color: var(--text-color-on-white);
+}
+
+.closebtncontainer {
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+}
+
+/* The Close Button */
+.close {
+  color: var(--text-color-on-white);
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: var(--text-color-on-white);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal .modal-footer {
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10vw;
+  padding-top: 20px;
+}
+
+.modal .modal-footer button {
+  background-color: var(--primary-color);
+  padding: 14px;
+  width: 14vw;
+  border: none;
+  color: var(--text-color-on-background);
+  text-transform: uppercase;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: all ease-in-out 0.3s;
+}
+
+.modal .modal-footer a {
+  text-decoration: none;
+  color: var(--text-color-on-white);
+  text-transform: uppercase;
+  font-size: 17px;
+  font-weight: bold;
+  transition: all ease-in-out 0.5s;
+}
+
+.modal .modal-footer a:hover {
+  background-color: var(--hover-color);
+  padding: 12px;
+}
+
+.modal .modal-footer button:hover {
+  cursor: pointer;
+  background-color: var(--hover-color);
+  color: var(--text-color-on-white);
+  font-weight: bold;
+}
+
+@media screen and (max-width: 1280px) {
+  /* I've taken the max measure available to cover all device types including tablets */
+
+  nav {
+    padding: 12px;
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  nav span {
+    background-color: transparent;
+    display: block;
+  }
+
+  .sidenav {
+    display: block;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    text-align: center;
+  }
+
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: var(--text-color-on-background);
+    display: block;
+    transition: 0.3s;
+  }
+
+  .sidenav .globalinsidenav {
+    background-color: transparent;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sidenav .injectsidenav {
     background-color: transparent;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 10px;
-    font-size: 13px;
-}
-
-.icon-list i {
-    background-color: transparent;
     width: 100%;
+  }
+
+  .sidenav .injectsidenav i {
+    background-color: transparent;
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+  }
+
+  .sidenav .injectsidenav a {
+    background-color: transparent;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+    font-size: 18px;
     color: var(--text-color-on-background);
-}
+  }
 
-.icon-list .icon-list-box {
-    background-color: transparent;
-    padding: 12px;
-}
-
-nav span {
-    background-color: transparent;
-    display: none;
+  .sidenav a:hover {
     color: var(--text-color-on-background);
-}
+  }
 
-.sidenav {
-    background-color: transparent;
-    display: none;
-}
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 50px;
+    color: var(--text-color-on-background);
+  }
 
-/* The hero image */
-.hero-image {
+  /* The hero image */
+  .hero-image {
     /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://cdn.pixabay.com/photo/2024/01/08/21/31/frozen-8496388_1280.jpg");
 
@@ -130,18 +615,21 @@ nav span {
     background-size: cover;
     position: relative;
     object-fit: cover;
-}
+  }
 
-.hero-container {
+  .hero-container {
     text-align: center;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
-}
+    color: var(--text-color-on-background);
+    background-color: transparent;
+    font-size: 16px;
+    width: 100vw;
+  }
 
-.stuff-container {
+  .stuff-container {
     background-color: transparent;
     display: flex;
     flex-direction: row;
@@ -149,12 +637,12 @@ nav span {
     align-items: center;
     gap: 20px;
     padding-top: 20px;
-}
+  }
 
-.stuff-container a {
+  .stuff-container a {
     background-color: transparent;
     padding: 15px;
-    width: 25vw;
+    width: fit-content;
     /* applicare un border radius fatto bene ...  */
     color: var(--text-color-on-background);
     text-decoration: none;
@@ -162,85 +650,92 @@ nav span {
     text-transform: uppercase;
     /*border-radius: 12rem;*/
     border: 2px solid var(--primary-color);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    transition: all ease-in-out 0.5s;
-}
+  }
 
-.stuff-container a:hover {
-    background-color: var(--hover-color);
-    border: none;
-    color: var(--text-color-on-white);
-    font-weight: bold;
-}
-
-.stuff-container a:focus {
-    background-color: var(--hover-color);
-    border: none;
-    color: var(--text-color-on-white);
-    font-weight: bold;
-}
-
-.about-section {
+  .about-section {
     background-color: transparent;
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: start;
-}
+  }
 
-.about-section p {
+  .about-section p {
     background-color: transparent;
     padding-top: 20px;
     padding-left: 20px;
     text-align: justify;
-}
+  }
 
-.inside-aboutme {
+  .inside-aboutme {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 15px;
+  }
+
+  .inside-aboutme .firstattendent {
+    border: 2px solid var(--primary-color);
+    padding: 20px;
+  }
+
+  .about-section h1 {
     background-color: transparent;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    padding-top: 15px;
-}
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+  }
 
-.inside-aboutme .firstattendent {
-    border: 2px solid red;
-    padding: 20px;
-}
-
-.projectstop {
+  .projectstop {
     background-color: transparent;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
-}
+  }
 
-.projectstop p {
+  .projectstop p {
     background-color: transparent;
     padding-top: 20px;
-    font-size: 18px;
-}
+  }
 
-.projectsbox {
+  .projectstop {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .projectstop p {
+    background-color: transparent;
+    padding-top: 20px;
+    text-align: justify;
+    font-size: 16px;
+  }
+
+  .projectsbox {
     background-color: transparent;
     display: flex;
     flex-direction: row;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
     padding: 20px;
-    padding-left: 32px;
     gap: 50px;
     flex-wrap: wrap;
-}
+  }
 
-.projectsbox .card {
+  .projectsbox .card {
     /* Add shadows to create the "card" effect */
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
-    width: 20vw;
+    width: fit-content;
   }
 
   .projectsbox .card img {
@@ -260,13 +755,12 @@ nav span {
   .projectsbox .card .container button {
     background-color: var(--primary-color);
     padding: 14px;
-    width: 14vw;
+    width: 100%;
     border: none;
     color: var(--text-color-on-background);
     text-transform: uppercase;
     text-align: center;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: all ease-in-out 0.3s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   }
 
   .projectsbox .card h4 {
@@ -281,519 +775,54 @@ nav span {
 
   .projectsbox .card .container button:hover {
     cursor: pointer;
-    background-color: var(--hover-color);
-    color: var(--text-color-on-white);
-    font-weight: bold;
   }
 
-  .projectsbox .card .container button:focus {
-    cursor: pointer;
-    background-color: var(--hover-color);
-    color: var(--text-color-on-white);
-    font-weight: bold;
-  }
-  
   /* On mouse-over, add a deeper shadow */
   .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+
   }
 
   .card img:hover {
     transform: scale(1);
   }
-  
+
   /* Add some padding inside the card container */
   .container {
     padding: 2px 16px;
   }
 
-  .projectstop p {
-    background-color: transparent;
-    padding: 20px;
-    text-align: justify;
-  }
-
-  .projectsbox .card .project-link a {
-    color: transparent;
-    display: none;
-  }
-
-   /* The Modal (background) */
-.modal {
-    display: block; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+  /* The Modal (background) */
+  .modal {
+    display: block;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
   }
-  
+
   /* Modal Content/Box */
   .modal-content {
     background-color: var(--text-color-on-background);
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 15% auto;
+    /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid var(--text-color-on-background);
-    width: 40%; /* Could be more or less, depending on screen size */
-  }
-
-  .modal-content .modal-subcontent {
-    background-color: transparent;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .modal-content .modal-subcontent p {
-    background-color: transparent;
-    text-align: justify;
-    font-size: 17px;
-  }
-
-  .modal-content .modal-subcontent img {
-    width: 20vw;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    object-fit: cover;
-  }
-
-  #voteFormModal .modal-content {
-    background-color: var(--text-color-on-background);
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
-    gap: 20px;
-  }
-
-  .modal-content .modal-heading {
-    background-color: transparent;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  #voteFormModal .modal-content form {
-    background-color: transparent;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    align-items: start;
-    gap: 20px;
-  }
-
-  #voteFormModal .modal-content form input[type=number] {
-    background-color: var(--text-color-on-background);
-    padding: 10px;
-    width: 12vw;
-    border: 1px solid var(--text-color-on-white);
-  }
-
-  #voteFormModal .modal-content form label {
-    background-color: transparent;
-    padding-top: 10px;
-  }
-
-  #voteFormModal .modal-content form .sendvotebtncontainer {
-    background-color: transparent;
-    height: 5vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  #voteFormModal .modal-content form .sendvotebtncontainer button {
-    background-color: var(--primary-color);
-    padding: 8px;
-    width: 7vw;
-    color: var(--text-color-on-background);
-    text-transform: uppercase;
-    text-align: center;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    border: none;
-  }
-
-  #voteFormModal .modal-content form .sendvotebtncontainer button:hover {
-    cursor: pointer;
-  }
-
-  .closebtncontainer {
-    background-color: transparent;
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-    align-items: center;
-  }
-  
-  /* The Close Button */
-  .close {
-    color: var(--text-color-on-white);
-    font-size: 40px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: var(--text-color-on-white);
-    text-decoration: none;
-    cursor: pointer;
-  } 
-
-  .modal .modal-footer {
-    background-color: transparent;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    gap: 10vw;
-    padding-top: 20px;
-  }
-
-  .modal .modal-footer button {
-    background-color: var(--primary-color);
-    padding: 14px;
-    width: 14vw;
-    border: none;
-    color: var(--text-color-on-background);
-    text-transform: uppercase;
-    text-align: center;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: all ease-in-out 0.3s;
-  }
-
-  .modal .modal-footer a {
-    text-decoration: none;
-    color: var(--text-color-on-white);
-    text-transform: uppercase;
-    font-size: 17px;
-    font-weight: bold;
-    transition: all ease-in-out 0.5s;
-  }
-
-  .modal .modal-footer a:hover {
-    background-color: var(--hover-color);
-    padding: 12px;
-  }
-
-  .modal .modal-footer button:hover {
-    cursor: pointer;
-    background-color: var(--hover-color);
-    color: var(--text-color-on-white);
-    font-weight: bold;
-  }
-
-@media screen and (max-width: 1280px) { /* I've taken the max measure available to cover all device types including tablets */
-
-    nav {
-        padding: 12px;
-    }
-
-    nav ul {
-        display: none;
-    }
-
-    nav span {
-        background-color: transparent;
-        display: block;
-    }
-
-    .sidenav {
-        display: block;
-        height: 100%;
-        width: 0;
-        position: fixed;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        background-color: var(--text-color-on-white);
-        overflow-x: hidden;
-        transition: 0.5s;
-        padding-top: 60px;
-        text-align: center;
-    }
-
-    .sidenav a {
-        padding: 8px 8px 8px 32px;
-        text-decoration: none;
-        font-size: 25px;
-        color: var(--text-color-on-background);
-        display: block;
-        transition: 0.3s;
-    }
-
-    .sidenav .globalinsidenav {
-        background-color: transparent;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .sidenav .injectsidenav {
-        background-color: transparent;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-    }
-
-    .sidenav .injectsidenav i {
-        background-color: transparent;
-        width: fit-content;
-        display: flex;
-        flex-direction: row;
-        justify-content: start;
-        align-items: center;
-    }
-
-    .sidenav .injectsidenav a {
-        background-color: transparent;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        gap: 20px;
-        font-size: 18px;
-        color: var(--text-color-on-background);
-    }
-
-    .sidenav a:hover {
-        color: var(--text-color-on-background);
-    }
-
-    .sidenav .closebtn {
-        position: absolute;
-        top: 0;
-        right: 0;
-        font-size: 50px;
-        color: var(--text-color-on-background);
-    }
-
-    /* The hero image */
-    .hero-image {
-        /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://cdn.pixabay.com/photo/2024/01/08/21/31/frozen-8496388_1280.jpg");
-
-        /* Set a specific height */
-        height: 100vh;
-
-        /* Position and center the image to scale nicely on all screens */
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        position: relative;
-        object-fit: cover;
-    }
-
-    .hero-container {
-        text-align: center;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: var(--text-color-on-background);
-        background-color: transparent;
-        font-size: 12px;
-        width: 100vw;
-    }
-
-    .stuff-container {
-        background-color: transparent;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-        padding-top: 20px;
-    }
-
-    .stuff-container a {
-        background-color: transparent;
-        padding: 15px;
-        width: fit-content;
-        /* applicare un border radius fatto bene ...  */
-        color: var(--text-color-on-background);
-        text-decoration: none;
-        text-align: center;
-        text-transform: uppercase;
-        /*border-radius: 12rem;*/
-        border: 2px solid var(--primary-color);
-    }
-
-    .about-section {
-        background-color: transparent;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: start;
-        align-items: start;
-    }
-    
-    .about-section p {
-        background-color: transparent;
-        padding-top: 20px;
-        padding-left: 20px;
-        text-align: justify;
-    }
-    
-    .inside-aboutme {
-        background-color: transparent;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding-top: 15px;
-    }
-    
-    .inside-aboutme .firstattendent {
-        border: 2px solid var(--primary-color);
-        padding: 20px;
-    }
-
-    .about-section h1 {
-        background-color: transparent;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        width: 100%;
-        align-items: center;
-    }
-
-    .projectstop {
-        background-color: transparent;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-    }
-    
-    .projectstop p {
-        background-color: transparent;
-        padding-top: 20px;
-    }
-
-    .projectstop {
-        background-color: transparent;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-    }
-    
-    .projectstop p {
-        background-color: transparent;
-        padding-top: 20px;
-        text-align: justify;
-        font-size: 16px;
-    }
-    
-    .projectsbox {
-        background-color: transparent;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-        gap: 50px;
-        flex-wrap: wrap;
-    }
-    
-    .projectsbox .card {
-        /* Add shadows to create the "card" effect */
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-        transition: 0.3s;
-        width: fit-content;
-      }
-    
-      .projectsbox .card img {
-        transition: 0.3s;
-        transform: scale(0.8);
-      }
-    
-      .projectsbox .card .container {
-        background-color: transparent;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-      }
-    
-      .projectsbox .card .container button {
-        background-color: var(--primary-color);
-        padding: 14px;
-        width: 100%;
-        border: none;
-        color: var(--text-color-on-background);
-        text-transform: uppercase;
-        text-align: center;
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-      }
-    
-      .projectsbox .card h4 {
-        background-color: var(--primary-color);
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        padding: 12px;
-        color: var(--text-color-on-background);
-      }
-    
-      .projectsbox .card .container button:hover {
-        cursor: pointer;
-      }
-      
-      /* On mouse-over, add a deeper shadow */
-      .card:hover {
-        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-        
-      }
-    
-      .card img:hover {
-        transform: scale(1);
-      }
-      
-      /* Add some padding inside the card container */
-      .container {
-        padding: 2px 16px;
-      }
-
-      /* The Modal (background) */
-.modal {
-    display: block; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-  
-  /* Modal Content/Box */
-  .modal-content {
-    background-color: var(--text-color-on-background);
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid var(--text-color-on-background);
-    width: 90%; /* Could be more or less, depending on screen size */
+    width: 90%;
+    /* Could be more or less, depending on screen size */
   }
 
   .modal-content .modal-subcontent {
@@ -826,20 +855,20 @@ nav span {
     justify-content: end;
     align-items: center;
   }
-  
+
   /* The Close Button */
   .close {
     color: var(--text-color-on-white);
     font-size: 40px;
     font-weight: bold;
   }
-  
+
   .close:hover,
   .close:focus {
     color: var(--text-color-on-white);
     text-decoration: none;
     cursor: pointer;
-  } 
+  }
 
   .modal .modal-footer {
     background-color: transparent;
@@ -859,7 +888,7 @@ nav span {
     color: var(--text-color-on-background);
     text-transform: uppercase;
     text-align: center;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: all ease-in-out 0.3s;
   }
 
@@ -882,5 +911,62 @@ nav span {
     background-color: var(--hover-color);
     color: var(--text-color-on-white);
     font-weight: bold;
+  }
+
+  #voteFormModal .modal-content {
+    background-color: var(--text-color-on-background);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 20px;
+  }
+
+  #voteFormModal .modal-content form {
+    background-color: transparent;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  #voteFormModal .modal-content form input[type=number] {
+    background-color: var(--text-color-on-background);
+    padding: 10px;
+    width: 55vw;
+    border: 1px solid var(--text-color-on-white);
+  }
+
+  #voteFormModal .modal-content form label {
+    background-color: transparent;
+    padding-top: 10px;
+  }
+
+  #voteFormModal .modal-content form .sendvotebtncontainer {
+    background-color: transparent;
+    height: 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #voteFormModal .modal-content form .sendvotebtncontainer button {
+    background-color: var(--primary-color);
+    padding: 8px;
+    width: 40vw;
+    color: var(--text-color-on-background);
+    text-transform: uppercase;
+    text-align: center;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    border: none;
+    transition: all ease-in-out 0.3s;
+  }
+
+  #voteFormModal .modal-content form .sendvotebtncontainer button:hover {
+    cursor: pointer;
+    background-color: var(--hover-color);
+    color: var(--text-color-on-white);
   }
 }
