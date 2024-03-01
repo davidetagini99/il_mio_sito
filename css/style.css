@@ -601,10 +601,11 @@ nav span {
   }
 
   .sidenav .closebtn {
+    background-color: transparent;
     position: absolute;
     top: 0;
     right: 0;
-    font-size: 50px;
+    font-size: 35px;
     color: var(--text-color-on-background);
   }
 

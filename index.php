@@ -62,7 +62,7 @@ function generateNavigation($menuItems)
                 </li>
             </ul>
             <div id="mySidenav" class="sidenav">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa-solid fa-xmark"></i></a>
                 <div class="globalinsidenav">';
 
     foreach ($menuItems as $menuItem) {
