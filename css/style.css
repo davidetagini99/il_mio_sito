@@ -2,7 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Times New Roman', Times, serif;
+  /*font-family: 'Times New Roman', Times, serif;*/
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 :root {
@@ -510,6 +511,70 @@ nav span {
   font-weight: bold;
 }
 
+.generalvotecontainer {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.generalvotecontainer .insidevotecontainer {
+  background-color: transparent;
+  width: 35vw;
+  padding: 20px;
+  border: 3px solid var(--primary-color);
+}
+
+.insidevotecontainer h1 {
+  text-align: center;
+}
+
+.insidevotecontainer p {
+  background-color: transparent;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.backtoprogetticontainer {
+  background-color: transparent;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  padding-top: 22px;
+}
+
+.backtoprogetticontainer a {
+  background-color: var(--primary-color);
+  padding: 12px;
+  text-decoration: none;
+  color: var(--text-color-on-background);
+  text-transform: uppercase;
+  text-align: center;
+  font-size: medium;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: all ease-in-out 0.3s;
+}
+
+.backtoprogetticontainer a:hover {
+  cursor: pointer;
+  background-color: var(--hover-color);
+  color: var(--text-color-on-white);
+  font-weight: bold;
+}
+
+.backtoprogetticontainer a:focus {
+  cursor: pointer;
+  background-color: var(--hover-color);
+  color: var(--text-color-on-white);
+  font-weight: bold;
+}
+
 @media screen and (max-width: 1280px) {
   /* I've taken the max measure available to cover all device types including tablets */
 
@@ -976,5 +1041,23 @@ nav span {
     cursor: pointer;
     background-color: var(--hover-color);
     color: var(--text-color-on-white);
+  }
+
+  .generalvotecontainer {
+    background-color: transparent;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .generalvotecontainer .insidevotecontainer {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 92vw;
   }
 }

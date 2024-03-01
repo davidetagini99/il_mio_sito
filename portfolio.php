@@ -24,6 +24,7 @@ if (isset($_POST["sendvotebtn"])) {
             // Check for success
             if ($stmt->affected_rows > 0) {
                 // Vote inserted successfully
+                $_SESSION['has_voted'] = true; // Set session variable to indicate that the user has voted
                 header("Location: submit_vote.php");
                 exit();
             } else {

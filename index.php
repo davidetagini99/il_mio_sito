@@ -73,7 +73,7 @@ function generateNavigation($menuItems)
 
     $navigationHTML .= '</div>
             </div>
-            <span style="font-size:20px;cursor:pointer" onclick="openNav()"><i class="fa fa-bars"></i></span>
+            <span onclick="openNav()"><i class="fa fa-bars"></i></span>
         </nav>
     </div>';
 
