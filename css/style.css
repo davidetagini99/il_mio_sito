@@ -526,6 +526,13 @@ nav span {
     display: block;
   }
 
+  nav span i {
+    background-color: transparent;
+    font-size: 30px;
+    width: 17vw;
+    text-align: right;
+  }
+
   .sidenav {
     display: block;
     height: 100%;
