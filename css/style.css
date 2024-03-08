@@ -155,7 +155,7 @@ nav span {
 .stuff-container a {
   background-color: transparent;
   padding: 15px;
-  width: 25vw;
+  width: fit-content;
   /* applicare un border radius fatto bene ...  */
   color: var(--text-color-on-background);
   text-decoration: none;
@@ -246,7 +246,7 @@ nav span {
   /* Add shadows to create the "card" effect */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
-  width: 20vw;
+  width: 25vw;
 }
 
 .projectsbox .card img {
@@ -266,7 +266,7 @@ nav span {
 .projectsbox .card .container button {
   background-color: var(--primary-color);
   padding: 14px;
-  width: 14vw;
+  width: 25vw;
   border: none;
   color: var(--text-color-on-background);
   text-transform: uppercase;
@@ -575,7 +575,7 @@ nav span {
   font-weight: bold;
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 768px) {
   /* I've taken the max measure available to cover all device types including tablets */
 
   nav {
